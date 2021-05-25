@@ -1,0 +1,19 @@
+# ide
+.idea
+.vscode
+
+# python
+**/.python_venv
+
+# terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+
+
+# DirEnv
+
+**/.secret/
+**/.target/
+**/data/.*
