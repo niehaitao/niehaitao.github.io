@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: contractor
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    - match: Host(`jenkins.kind.io`)
+      kind: Rule
+      services:
+        - name: contractor
+          namespace: app
+          port: 8080

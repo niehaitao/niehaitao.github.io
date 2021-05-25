@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  credentials: |-
+    credentials:
+      system:
+        domainCredentials:
+          - credentials:
+              - basicSSHUserPrivateKey:
+                  scope: GLOBAL
+                  id: github-ssh-lil-app
+                  username: github-ssh-lil-app
+                  privateKeySource:
+                    directEntry:
+                      privateKey: "{{ github_lil_app_pk }}"
+  
+kind: ConfigMap
+metadata:
+  labels:
+    contractor-jenkins-config: "true"
+
+  name: contractor-config-cred
+  namespace: app
+

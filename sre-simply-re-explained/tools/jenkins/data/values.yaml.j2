@@ -1,0 +1,69 @@
+fullnameOverride: contractor
+agent:
+  image: jenkins/inbound-agent
+  namespace: app
+controller:
+  image: jenkins/jenkins
+  installPlugins:
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - configuration-as-code
+  additionalPlugins:
+    - job-dsl
+    - prometheus
+
+    - authorize-project
+    - github-oauth
+    - role-strategy
+    - matrix-auth
+    - github
+    - basic-branch-build-strategies
+  ingress.enabled: false
+  initializeOnce: false
+  JCasC:
+    enabled: true
+    configScripts:
+      github-oauth: |-
+            jenkins:
+              securityRealm:
+                github:
+                  githubWebUri: "https://github.com"
+                  githubApiUri: "https://api.github.com"
+                  clientID: "{{ github_auth_client_id }}"
+                  clientSecret: "{{ github_auth_client_secret }}"
+                  oauthScopes: "read:org,user:email"
+      permissions: |-
+            jenkins:
+              authorizationStrategy:
+                roleBased:
+                  roles:
+                    global:
+                      - name: administrators
+                        description: Jenkins Administrators
+                        permissions:
+                          - Overall/Administer
+                        assignments:
+                          - haitaonie
+                      - name: visitors
+                        description: Jenkins Visitors
+                        permissions:
+                          - Job/Read
+                          - Overall/Read
+                        assignments:
+                          - niehaitao
+      security: |-
+        security:
+          globalJobDslSecurityConfiguration:
+            useScriptSecurity: false
+          queueItemAuthenticator:
+            authenticators:
+              - global:
+                  strategy: systemAuthorizationStrategy
+  sidecars:
+    configAutoReload:
+      image: kiwigrid/k8s-sidecar:0.1.275
+  prometheus:
+    enabled: true
+    serviceMonitorAdditionalLabels:
+      audit: hunter

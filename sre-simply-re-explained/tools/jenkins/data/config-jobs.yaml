@@ -1,0 +1,33 @@
+apiVersion: v1
+data:
+  jobs.yaml: |-
+    jobs:
+      - script: >
+          folder("test") {
+            description "Tests Jobs"
+          }
+      - script: >
+          pipelineJob('test/your-jenkins-job-1') {
+            definition {
+              cpsScm {
+                scm {
+                  git {
+                    remote {
+                      credentials "github-ssh-lil-app"
+                      url "git@github.com:niehaitao/lil-app.git"
+                    }
+                    branch "lil-app-001-jenkinsfile"
+                    scriptPath "ops/jenkinsfiles/basic-pipeline.groovy"
+                  }
+                }
+              }
+            }
+          }
+kind: ConfigMap
+metadata:
+  labels:
+    contractor-jenkins-config: "true"
+
+  name: contractor-config-jobs
+  namespace: app
+
