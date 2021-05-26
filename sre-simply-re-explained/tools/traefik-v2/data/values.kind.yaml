@@ -1,0 +1,14 @@
+ingressRoute:
+  dashboard:
+    enabled: false
+
+service:
+  spec:
+    loadBalancerIP: "172.19.255.201"
+
+additionalArguments:
+  - --entrypoints.websecure.http.tls.certResolver=default
+
+ports:
+  web:
+    redirectTo: websecure

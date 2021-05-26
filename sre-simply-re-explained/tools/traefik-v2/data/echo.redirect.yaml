@@ -1,0 +1,39 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nginx-http
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`nginx.kind.io`)
+      middlewares:
+        - name: https-only
+      kind: Rule
+      services:
+      - name: nginx
+        port: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: https-only
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: echo-https
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`echo.kind.io`)
+      kind: Rule
+      services:
+      - name: kind-echo
+        port: 1234
