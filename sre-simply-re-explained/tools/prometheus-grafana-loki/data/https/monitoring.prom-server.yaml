@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: monitoring.prom-server
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    - match: Host(`prom-server.kind.io`)
+      kind: Rule
+      services:
+      - name: hunter-prometheus
+        namespace: monitoring
+        port: 9090

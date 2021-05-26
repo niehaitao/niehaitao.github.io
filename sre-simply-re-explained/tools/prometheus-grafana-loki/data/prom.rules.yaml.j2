@@ -1,0 +1,23 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+     {{ stack['label_key'] }}: {{ stack['label_val'] }}
+  name: trigger
+  namespace: monitoring
+spec:
+  groups:
+    - name: example.rule
+      rules:
+      - alert: example.alert
+        expr: vector(1)
+
+    - name: {{ rule['name'] }}
+      rules:
+        - alert: {{ alert['name'] }} 
+          expr: |
+            sum(increase({{ loki['prefixed'] }}[1m])) > 10
+          for: 2m
+          labels:
+            severity: warning

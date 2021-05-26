@@ -1,0 +1,37 @@
+# Disable everything else.
+alertmanager:
+  enabled: false
+coreDns:
+  enabled: false
+defaultRules:
+  create: false
+grafana:
+  enabled: false
+kubeApiServer:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+kubeDns:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubelet:
+  enabled: false
+kubeProxy:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeStateMetrics:
+  enabled: false
+nodeExporter:
+  enabled: false
+prometheus:
+  enabled: false
+
+# Prometheus Operator
+prometheusOperator:
+  enabled: true
+  createCustomResource: false
+
+  logLevel: info
+  logFormat: json

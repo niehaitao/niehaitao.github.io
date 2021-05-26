@@ -1,0 +1,16 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: monitoring.grafana
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    - match: Host(`grafana.kind.io`)
+      kind: Rule
+      services:
+      - name: grafana
+        namespace: monitoring
+        port: 80

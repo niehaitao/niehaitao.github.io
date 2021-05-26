@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ app['name'] | default("rpc-app", true) }}
+  namespace: {{ app['namespace'] | default("default", true) }}
+  labels:
+    app: rpc-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rpc-app
+  template:
+    metadata:
+      labels:
+        app: rpc-app
+    spec:
+    {% if image['auth'] is not none %}   
+      imagePullSecrets:
+      - name: {{ image['auth'] }}
+    {% endif %}
+      containers:
+      - name: cont-rpc-app
+        image: {{ image['name'] | default("supergiantkir/prometheus-test-app", true) }}
+        ports:
+        - name: web
+          containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ app['name'] | default("rpc-app", true) }}
+  namespace: {{ app['namespace'] | default("default", true) }}
+  labels:
+    app: rpc-app
+spec:
+  ports:
+  - name: metrics
+    port: 80
+    targetPort: 8081
+    protocol: TCP
+  selector:
+    app: rpc-app
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    {{ prometheus['label_key'] }}: {{ prometheus['label_val'] }}
+  name: {{ app['name'] | default("rpc-app", true) }}
+  namespace: {{ prometheus['namespace'] | default("default", true) }}
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 30s
+    port: metrics
+  namespaceSelector:
+    matchNames:
+    - {{ app['namespace'] | default("default", true) }}
+  selector:
+    matchLabels:
+      app: rpc-app
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ app['name'] | default("rpc-app", true) }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{app['name']}}.{{ dns }}`)
+      kind: Rule
+      services:
+      - name: {{ app['name'] | default("rpc-app", true) }}
+        namespace: {{ app['namespace'] | default("default", true) }}
+        port: 80
