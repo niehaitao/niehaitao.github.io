@@ -16,36 +16,36 @@ kubectl run echo-root --image=hashicorp/http-echo:0.2.3 --labels=app=echo-root -
 kubectl run echo-foo  --image=hashicorp/http-echo:0.2.3 --labels=app=echo-foo  -- "-text=foo"
 kubectl run echo-bar  --image=hashicorp/http-echo:0.2.3 --labels=app=echo-bar  -- "-text=bar"
 
-kubectl -n dp-tools expose pod echo-root  --name echo-root  --type=ClusterIP --selector=ref=root  --port=1234 --target-port=5678
-kubectl -n dp-tools expose pod echo-foo   --name echo-foo   --type=ClusterIP --selector=ref=foo   --port=1234 --target-port=5678
-kubectl -n dp-tools expose pod echo-bar   --name echo-bar   --type=ClusterIP --selector=ref=bar   --port=1234 --target-port=5678
+kubectl -n app expose pod echo-root  --name echo-root  --type=ClusterIP --selector=ref=root  --port=1234 --target-port=5678
+kubectl -n app expose pod echo-foo   --name echo-foo   --type=ClusterIP --selector=ref=foo   --port=1234 --target-port=5678
+kubectl -n app expose pod echo-bar   --name echo-bar   --type=ClusterIP --selector=ref=bar   --port=1234 --target-port=5678
 
-kubectl apply -f .target/echo-ing.yaml
+kubectl apply -f echo-ing.yaml # credential
 ```
 
 ## Check
 
 ```bash
-kubectl -n dp-tools describe ing echo-ing 
+kubectl -n app describe ing echo-ing 
 # Name:             echo-ing
-# Namespace:        dp-tools
+# Namespace:        app
 # Address:          xxx.us-east-1.elb.amazonaws.com
 # Default backend:  default-http-backend:80 (<error: endpoints "default-http-backend" not found>)
 # Rules:
 #   Host                           Path  Backends
 #   ----                           ----  --------
-#   echo.dp-tools.dev.xxx.com  
+#   echo.app.xxx.com  
 #                                  /       echo-root:1234 (10.223.73.227:5678)
 #                                  /foo/   echo-foo:1234 (10.223.67.67:5678)
 #                                  /bar/   echo-bar:1234 (10.223.74.187:5678)
 # Annotations:                     traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
 # Events:                          <none>
 
-curl https://echo.dp-tools.dev.xxx.com -kL
+curl https://echo.app.xxx.com -kL
 # root
-curl https://echo.dp-tools.dev.xxx.com/foo/ -kL
+curl https://echo.app.xxx.com/foo/ -kL
 # foo
-curl https://echo.dp-tools.dev.xxx.com/bar/ -kL
+curl https://echo.app.xxx.com/bar/ -kL
 # bar
 ```
 
