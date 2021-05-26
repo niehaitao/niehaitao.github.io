@@ -1,0 +1,30 @@
+# Component - Loki Values
+ingress:
+  enabled: false
+# Needed for Alerting: https://grafana.com/docs/loki/latest/alerting/
+config:
+  ruler:
+    storage:
+      type: local
+      local:
+        directory: /rules
+    rule_path: /tmp/scratch
+    ring:
+      kvstore:
+        store: inmemory
+    enable_api: true
+    # http://alertmanager.svc.namespace:9093
+    alertmanager_url: {{ loki_alert['alertmanager_endpoint'] }}
+
+# Specify Loki Alerting rules: https://grafana.com/docs/loki/latest/alerting/
+alerting_groups:
+  - name: {{ loki_rule['name'] }}
+    rules:
+      - alert: {{ loki_alert['name'] }} 
+        expr:  {{ loki_alert['expr'] }} 
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          message: {{ loki_alert['message'] }} 
+          runbook_url: {{ loki_alert['runbook'] }} 

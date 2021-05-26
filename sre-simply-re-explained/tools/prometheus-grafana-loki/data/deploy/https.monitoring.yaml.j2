@@ -1,0 +1,30 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: monitoring
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    - match: Host(`prometheus.{{ dns }}`)
+      kind: Rule
+      services:
+      - name: {{ prometheus }}
+        namespace: monitoring
+        port: 9090
+
+    - match: Host(`grafana.{{ dns }}`)
+      kind: Rule
+      services:
+      - name: {{ grafana }}
+        namespace: monitoring
+        port: 80
+
+    - match: Host(`alertmanager.{{ dns }}`)
+      kind: Rule
+      services:
+      - name: {{ alertmanager }}
+        namespace: monitoring
+        port: 9093

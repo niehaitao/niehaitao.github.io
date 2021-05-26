@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rpc-app
+  namespace: app
+  labels:
+    app: rpc-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rpc-app
+  template:
+    metadata:
+      labels:
+        app: rpc-app
+    spec:
+       
+      imagePullSecrets:
+      - name: 
+    
+      containers:
+      - name: cont-rpc-app
+        image: supergiantkir/prometheus-test-app
+        ports:
+        - name: web
+          containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rpc-app
+  namespace: app
+  labels:
+    app: rpc-app
+spec:
+  ports:
+  - name: metrics
+    port: 80
+    targetPort: 8081
+    protocol: TCP
+  selector:
+    app: rpc-app
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    audit: hunter
+  name: rpc-app
+  namespace: monitoring
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 30s
+    port: metrics
+  namespaceSelector:
+    matchNames:
+    - app
+  selector:
+    matchLabels:
+      app: rpc-app
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: rpc-app
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`rpc-app.kind.io`)
+      kind: Rule
+      services:
+      - name: rpc-app
+        namespace: app
+        port: 80

@@ -1,0 +1,19 @@
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    {{ stack['label_key'] }}: {{ stack['label_val'] }}
+  
+pipelineStages:
+- docker: {}
+- match:
+    selector: '{app="{{ loki['discovery'] }}"}'
+    stages:
+    - regex:
+        expression: '.*(?P<hits>GET /.*)'
+    - metrics:
+        {{ loki['metric'] }}:
+          type: Counter
+          description: "Total nginx requests"
+          source: hits
+          config:
+            action: inc
