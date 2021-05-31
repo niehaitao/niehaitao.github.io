@@ -1,4 +1,4 @@
-fullnameOverride: contractor
+fullnameOverride: {{ fullnameOverride }}
 agent:
   image: jenkins/inbound-agent
   namespace: app
@@ -24,6 +24,8 @@ controller:
   JCasC:
     enabled: true
     configScripts:
+      # credentials:  load from configmap with label "{{ fullnameOverride }}-jenkins-config"
+      # jobs.yaml:    load from configmap with label "{{ fullnameOverride }}-jenkins-config"
       github-oauth: |-
             jenkins:
               securityRealm:
