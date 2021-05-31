@@ -1,17 +1,26 @@
 apiVersion: v1
 data:
-  credentials: |-
+  credentials.yaml: |-
     credentials:
       system:
         domainCredentials:
           - credentials:
               - basicSSHUserPrivateKey:
                   scope: GLOBAL
-                  id: github-ssh-lil-app
-                  username: github-ssh-lil-app
+                  id: github-lil-app-deploy-key
+                  username: github-lil-app-deploy-key
+                  description: "https://github.com/niehaitao/lil-app » Settings » Deploy keys"
                   privateKeySource:
                     directEntry:
-                      privateKey: "{{ github_lil_app_pk }}"
+                      privateKey: "{{ github_lil_app_deploy_key }}"
+              - basicSSHUserPrivateKey:
+                  scope: GLOBAL
+                  id: github-ssh-ci-pop-cloud
+                  username: github-ssh-ci-pop-cloud
+                  description: "https://github.com/ci-pop-cloud » Settings » SSH and GPG keys"
+                  privateKeySource:
+                    directEntry:
+                      privateKey: "{{ github_ci_pop_cloud_ssh_key }}"
   
 kind: ConfigMap
 metadata:

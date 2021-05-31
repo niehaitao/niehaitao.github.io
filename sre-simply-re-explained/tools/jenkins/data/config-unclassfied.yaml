@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  unclassified.yaml: |-
+    unclassified:
+      globallibraries:
+        libraries:
+        - allowVersionOverride: true
+          defaultVersion: main
+          implicit: false
+          includeInChangesets: true
+          name: pop-cloud-jenkins-shared-libs
+          retriever:
+            modernSCM:
+              scm:
+                git:
+                  credentialsId: github-ssh-ci-pop-cloud
+                  remote: git@github.com:pop-cloud/jenkins-shared-libs.git
+kind: ConfigMap
+metadata:
+  labels:
+    contractor-jenkins-config: "true"
+
+  name: contractor-config-unclassified
+  namespace: app
+
