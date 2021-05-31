@@ -25,7 +25,8 @@ controller:
     enabled: true
     configScripts:
       # credentials:  load from configmap with label "{{ fullnameOverride }}-jenkins-config"
-      # jobs.yaml:    load from configmap with label "{{ fullnameOverride }}-jenkins-config"
+      # jobs:         load from configmap with label "{{ fullnameOverride }}-jenkins-config"
+      # unclassified: load from configmap with label "{{ fullnameOverride }}-jenkins-config"
       github-oauth: |-
             jenkins:
               securityRealm:
