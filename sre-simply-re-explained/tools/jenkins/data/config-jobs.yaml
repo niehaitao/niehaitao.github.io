@@ -7,17 +7,32 @@ data:
             description "Tests Jobs"
           }
       - script: >
-          pipelineJob('test/your-jenkins-job-1') {
+          pipelineJob('test/basic-pipeline') {
             definition {
               cpsScm {
                 scm {
                   git {
                     remote {
-                      credentials "github-ssh-lil-app"
-                      url "git@github.com:niehaitao/lil-app.git"
+                      url "https://github.com/niehaitao/niehaitao.github.io.git"
                     }
-                    branch "lil-app-001-jenkinsfile"
-                    scriptPath "ops/jenkinsfiles/basic-pipeline.groovy"
+                    branch "main"
+                    scriptPath "sre-simply-re-explained/cicd/data/basic-pipeline.groovy"
+                  }
+                }
+              }
+            }
+          }
+      - script: >
+          pipelineJob('test/sharedlib-pipeline') {
+            definition {
+              cpsScm {
+                scm {
+                  git {
+                    remote {
+                      url "https://github.com/niehaitao/niehaitao.github.io.git"
+                    }
+                    branch "main"
+                    scriptPath "sre-simply-re-explained/cicd/data/sharedlib-pipeline.groovy"
                   }
                 }
               }

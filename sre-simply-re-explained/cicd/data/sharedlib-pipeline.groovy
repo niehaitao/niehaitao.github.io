@@ -4,7 +4,7 @@ GString POD_LABEL = "your-jenkinsfile-${UUID.randomUUID().toString()}"
 pipeline {
     agent { kubernetes { label POD_LABEL } }
     stages {
-        stage('Call Shared Lib') {
+        stage('Hello') {
             steps {
                 script {
                     def reply=foo.sayHello what: 'World'
