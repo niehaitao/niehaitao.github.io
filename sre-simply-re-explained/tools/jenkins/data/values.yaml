@@ -4,7 +4,6 @@ agent:
   namespace: app
 controller:
   image: jenkins/jenkins
-  tag: 2.277.1
   installPlugins:
     - kubernetes
     - workflow-aggregator
@@ -14,18 +13,18 @@ controller:
     - job-dsl
     - prometheus
 
-  initializeOnce: false
-
+    - authorize-project
+    - github-oauth
+    - role-strategy
+    - matrix-auth
+    - github
+    - basic-branch-build-strategies
   ingress.enabled: false
+  initializeOnce: false
   JCasC:
     enabled: true
-    configScripts:
-      jobs: |-
-        jobs:
-          - script: >
-              folder("__TESTS__") {
-                description "Tests Jobs"
-              }
+    securityRealm: false
+    authorizationStrategy: false
   sidecars:
     configAutoReload:
       image: kiwigrid/k8s-sidecar:0.1.275
