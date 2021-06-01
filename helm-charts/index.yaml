@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  lil-app:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-03-03T10:33:34.830617152Z"
+    description: lil-app Helm-Chart
+    digest: 67d5554da1521ae05b886817f17d1a8901659068b32a62f6f816fd8bede2aef7
+    icon: https://cdn.icon-icons.com/icons2/29/PNG/256/animal_panda_2737.png
+    name: lil-app
+    type: application
+    urls:
+    - https://niehaitao.github.io/helm-charts/lil-app-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-03-03T10:33:34.82987695Z"
