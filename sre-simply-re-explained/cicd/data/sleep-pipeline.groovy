@@ -5,7 +5,7 @@ pipeline {
     agent { kubernetes { label POD_LABEL } }
     parameters {
         choice(name: 'EXPECT_STATUS', choices: ['SUCCESS', 'UNSTABLE', 'FAILURE', 'ABORTED', 'CYCLE'])
-        choice(name: 'EXPECT_SLEEP',  choices: ['1', '10', '20', '30', '60'])
+        choice(name: 'EXPECT_SLEEP',  choices: ['1', '10', '20', '30', '60', '120', '300'])
     }
     stages {
         stage('Hello') {
