@@ -53,6 +53,12 @@ do-jinja your-template.yaml.j2 your-values.yaml /tmp/
 ls /tmp/your-template.yaml
 ```
 
+## Git
+
+```bash
+git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
+```
+
 ## Kind
 
 see [Kind](kind/README.md)

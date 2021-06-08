@@ -25,8 +25,8 @@ Use [data/values.yaml](data/values.yaml) to install Jenkins Helm Chart
 ```bash
 helm upgrade -n app -i contractor jenkins  \
   --repo https://charts.jenkins.io  \
-  --version 3.2.5 \
-  -f data/values.mvp.yaml
+  --version 3.3.21 \
+  -f data/values.yaml
 
 kubectl wait pod        \
   --namespace app       \

@@ -1,0 +1,43 @@
+apiVersion: v1
+data:
+  auth.yaml: |-
+    jenkins:
+      securityRealm:
+        github:
+          githubWebUri: "https://github.com"
+          githubApiUri: "https://api.github.com"
+          clientID: "{{ github_auth_client_id }}"
+          clientSecret: "{{ github_auth_client_secret }}"
+          oauthScopes: "read:org,user:email"
+      authorizationStrategy:
+        roleBased:
+          roles:
+            global:
+              - name: administrators
+                description: Jenkins Administrators
+                permissions:
+                  - Overall/Administer
+                assignments:
+                  - haitaonie
+              - name: visitors
+                description: Jenkins Visitors
+                permissions:
+                  - Job/Read
+                  - Overall/Read
+                assignments:
+                  - niehaitao
+    security:
+      globalJobDslSecurityConfiguration:
+        useScriptSecurity: false
+      queueItemAuthenticator:
+        authenticators:
+          - global:
+              strategy: systemAuthorizationStrategy
+kind: ConfigMap
+metadata:
+  labels:
+    contractor-jenkins-config: "true"
+
+  name: contractor-config-auth
+  namespace: app
+
