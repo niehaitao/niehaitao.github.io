@@ -67,14 +67,22 @@ see [Kind](kind/README.md)
 
 see [Traefik](traefik/README.md)
 
-## k8s-dashboard
+## K8S Dashboard
 
 see [K8S Dashboard](k8s-dashboard/README.md)
 
-## prometheus-grafana-loki
+## Prometheus Grafana Loki
 
-See [prometheus-grafana-loki](prometheus-grafana-loki/README.md)
+See [Prometheus Grafana Loki](prometheus-grafana-loki/README.md)
 
-## flux
+## Flux
 
-See [flux](flux/README.md)
+See [Flux](flux/README.md)
+
+## Jenkins
+
+See [Jenkins](flux/README.md)
+
+## GitHub Action
+
+See [GitHub Action](github-action/README.md)
