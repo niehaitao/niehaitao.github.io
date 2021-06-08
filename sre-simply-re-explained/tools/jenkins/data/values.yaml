@@ -3,7 +3,8 @@ agent:
   image: jenkins/inbound-agent
   namespace: app
 controller:
-  image: jenkins/jenkins
+  overwritePlugins: true
+  installLatestPlugins: true
   installPlugins:
     - kubernetes
     - workflow-aggregator
@@ -18,16 +19,10 @@ controller:
     - role-strategy
     - matrix-auth
     - github
-    - basic-branch-build-strategies
-  ingress.enabled: false
-  initializeOnce: false
+    - basic-branch-build-strategies:1.3.0
   JCasC:
-    enabled: true
     securityRealm: false
     authorizationStrategy: false
-  sidecars:
-    configAutoReload:
-      image: kiwigrid/k8s-sidecar:0.1.275
   prometheus:
     enabled: true
     serviceMonitorAdditionalLabels:
