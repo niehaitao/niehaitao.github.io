@@ -13,7 +13,12 @@ data:
                 scm {
                   git {
                     remote {
-                      url "https://github.com/niehaitao/niehaitao.github.io.git"
+                      credentials "github-ssh-ci-pop-cloud"
+                      url "git@github.com:niehaitao/niehaitao.github.io.git"
+                    }
+                    extensions {
+                      localBranch "main"
+                      cleanBeforeCheckout()
                     }
                     branch "main"
                     scriptPath "sre-simply-re-explained/cicd/data/pipeline-basic.groovy"

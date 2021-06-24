@@ -46,9 +46,11 @@ Use [data/ingress.yaml](data/ingress.yaml) to expose HTTP & HTTPs routes
 ```bash
 kubectl apply -f data/ingress.yaml
 
-wget https://jenkins.kind.io --no-check-certificate --spider 
-wget  http://jenkins.kind.io --no-check-certificate --spider 
+wget https://jenkins.kind.io --no-check-certificate --spider
+wget  http://jenkins.kind.io --no-check-certificate --spider
 
-curl https://jenkins.kind.io -ikL 
-curl  http://jenkins.kind.io -ikL 
+curl https://jenkins.kind.io -ikL
+curl  http://jenkins.kind.io -ikL
 ```
+
+## Config As Code
