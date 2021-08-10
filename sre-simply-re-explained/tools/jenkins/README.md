@@ -72,4 +72,9 @@ curl  http://jenkins.kind.io -ikL
 
 ![config-plugins](data/config-plugins.png)
 
+```bash
+kubectl exec --namespace service -it jenkins-flux-ux-0 -c jenkins -- /bin/bash
+
+for i in $(ls /var/jenkins_home/plugins/*.jpi.version_from_image); do echo $(echo $i|grep -o -P '(?<=/var/jenkins_home/plugins/).*(?=.jpi.version_from_image)'):$(cat $i); done
+```
 </details>
