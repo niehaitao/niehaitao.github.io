@@ -7,14 +7,6 @@ data:
           - credentials:
               - basicSSHUserPrivateKey:
                   scope: GLOBAL
-                  id: github-lil-app-deploy-key
-                  username: github-lil-app-deploy-key
-                  description: "https://github.com/niehaitao/lil-app » Settings » Deploy keys"
-                  privateKeySource:
-                    directEntry:
-                      privateKey: "{{ github_lil_app_deploy_key }}"
-              - basicSSHUserPrivateKey:
-                  scope: GLOBAL
                   id: github-ssh-ci-pop-cloud
                   username: github-ssh-ci-pop-cloud
                   description: "https://github.com/ci-pop-cloud » Settings » SSH and GPG keys"

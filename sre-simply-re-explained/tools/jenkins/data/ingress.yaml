@@ -8,9 +8,17 @@ spec:
     - websecure
 
   routes:
-    - match: Host(`jenkins.kind.io`)
+    - match: Host(`jenkins-a.kind.io`)
       kind: Rule
       services:
-        - name: contractor
+        - name: contractor-a
+          namespace: app
+          port: 8080
+
+  routes:
+    - match: Host(`jenkins-b.kind.io`)
+      kind: Rule
+      services:
+        - name: contractor-b
           namespace: app
           port: 8080

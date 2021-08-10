@@ -4,7 +4,7 @@ kind is a tool for running local Kubernetes clusters using Docker container “n
 
 ## TL;DR
 
-[Setup local wildcard domain resolution](dnsmasq.md#steps) `*.kind.io` to `172.19.255.201`
+[Setup local wildcard domain resolution](../local/dnsmasq.md#steps) `*.kind.io` to `172.19.255.201`
 
 ```bash
 export KUBECONFIG=/tmp/kind-play
@@ -30,7 +30,7 @@ see [Install kind Cluster](installation.md)
 
 ## Local Host Setup
 
-see [Setup local wildcard domain resolution](dnsmasq.md)
+see [Setup local wildcard domain resolution](../local/dnsmasq.md)
 
 ## Load Balance on Cluster
 

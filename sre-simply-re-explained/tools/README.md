@@ -32,9 +32,28 @@ Use jinja2 to template configuration values
 
 ```bash
 function do-jinja() {
-  src=$1 
-  val=$2
-  dst_dir=$3
+  template=
+  values=
+  output=
+  while :; do
+    case $1 in
+      -t|--template)  shift 
+                  template=$1         
+                  ;;
+      -v|--values)   shift 
+                  values=$1
+                  ;;
+      -o|--output)  shift 
+                  output=$1
+                  ;; 
+      *) break
+    esac
+    shift
+  done
+
+  src=$template 
+  val=$values
+  dst_dir=$output
 
   folder="/"
   dst_dir=${dst_dir%"$folder"}
@@ -48,7 +67,7 @@ function do-jinja() {
   jinja2 $src $val | tee $dst
 }
 
-do-jinja your-template.yaml.j2 your-values.yaml /tmp/
+do-jinja -t data/your-template.yaml.j2 -v your-values.yaml -o /tmp/
 
 ls /tmp/your-template.yaml
 ```
@@ -67,14 +86,22 @@ see [Kind](kind/README.md)
 
 see [Traefik](traefik/README.md)
 
-## k8s-dashboard
+## K8S Dashboard
 
 see [K8S Dashboard](k8s-dashboard/README.md)
 
-## prometheus-grafana-loki
+## Prometheus Grafana Loki
 
-See [prometheus-grafana-loki](prometheus-grafana-loki/README.md)
+See [Prometheus Grafana Loki](prometheus-grafana-loki/README.md)
 
-## flux
+## Flux
 
-See [flux](flux/README.md)
+See [Flux](flux/README.md)
+
+## Jenkins
+
+See [Jenkins](flux/README.md)
+
+## GitHub Action
+
+See [GitHub Action](github-action/README.md)

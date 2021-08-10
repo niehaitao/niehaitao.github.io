@@ -10,17 +10,19 @@ controller:
     - workflow-aggregator
     - git
     - configuration-as-code
-  additionalPlugins:
-    - job-dsl
-    - prometheus
 
+  additionalPlugins:
+    - hashicorp-vault-plugin
+    - job-dsl
     - authorize-project
     - github-oauth
     - role-strategy
     - matrix-auth
     - github
-    - basic-branch-build-strategies:1.3.0
+    - prometheus
+
   JCasC:
+    configScripts: {}
     securityRealm: false
     authorizationStrategy: false
   prometheus:
