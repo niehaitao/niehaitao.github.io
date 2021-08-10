@@ -77,4 +77,14 @@ kubectl exec --namespace service -it jenkins-flux-ux-0 -c jenkins -- /bin/bash
 
 for i in $(ls /var/jenkins_home/plugins/*.jpi.version_from_image); do echo $(echo $i|grep -o -P '(?<=/var/jenkins_home/plugins/).*(?=.jpi.version_from_image)'):$(cat $i); done
 ```
+
+</details>
+
+
+## Observability
+
+<details>
+
+![observability](data/observability.png)
+
 </details>
