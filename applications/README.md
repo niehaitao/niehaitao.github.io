@@ -20,4 +20,4 @@
 
 > Lear more about [How to Build & Run Activities Stack](activities/README.md)
 
-## Helm Resources
+## Helm Resources Stack

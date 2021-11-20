@@ -2,11 +2,13 @@
 
 The stack is composed of [activities-web](https://github.com/niehaitao/activities-web), [activities-api](https://github.com/niehaitao/activities-api) and [activities-database](activities/init-db.sql)
 
-See [here](../README.md#activities-stack) to get started of the stack *(purpose, architecture ...)*
+|                 Application                  |                Architecture                |
+| :------------------------------------------: | :----------------------------------------: |
+| <img src="../.data/activities.gif" width="300" /> | <img src="../.data/arch.png" width="800" /> |
 
-## Build & Run - All
+## TL;DR
 
-To build and run all of them together:
+To build and run the whole stack together.
 
 ```bash
 git clone https://github.com/niehaitao/activities-web.git web
@@ -14,9 +16,13 @@ git clone https://github.com/niehaitao/activities-api.git api
 docker-compose -f docker-compose.build.yml up --force-recreate --abort-on-container-exit --build
 ```
 
-## Build & Run - One by One
+## Build & Run
 
+To build and run the stack's applications one by one.
 
+### Network
+
+Create the network
 ```bash
 docker network create act
 ```
