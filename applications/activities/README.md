@@ -4,7 +4,7 @@ The stack is composed of [activities-web](https://github.com/niehaitao/activitie
 
 |                 Application                  |                Architecture                |
 | :------------------------------------------: | :----------------------------------------: |
-| <img src=".data/activities.gif" width="300" /> | <img src="../.data/architecture.png" width="800" /> |
+| <img src=".data/activities.gif" width="300" /> | <img src="../.data/architecture.png" width="1000" /> |
 
 ## TL;DR
 
