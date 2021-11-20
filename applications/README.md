@@ -10,7 +10,7 @@
 
 ## Architecture
 
-![image](.data/arch.png)
+![image](.data/arch-fbd.png)
 
 ## Activities Stack
 
