@@ -39,10 +39,35 @@ You can use `docker-compose -f activities/docker-compose.yml up` to create the s
 </tbody>
 </table>
 
-
-
 > Lear more about [How to Build the Activities Stack](activities/README.md)
 
 ## Helm Resources
 
-**Helm Resources** application stack is composed of front/back/database to show the create/update/delete activities.
+**Helm Resources** application stack provides the cross-cluster monitoring of Helm releases.
+It observes not only the status of the release itself but also the releases's workloads that have been declared in manifests.
+
+You can use `docker-compose -f helm-resources/docker-compose.yml up` to create the stack then see the result on http://localhost:8082/.
+
+<img src="helm-resources/.data/helm-resources.gif" alt="app"  width="1000">
+
+
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Application Architecture </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="2"><img src="helm-resources/.data/architecture.png" width="600"></td>
+  </tr>
+  <tr>
+    <td>Front End Web</td>
+    <td>Back End API</td>
+  </tr>
+  <tr>
+    <td ><a href="https://github.com/orgs/pop-cloud/packages/container/package/helm-resources-web" target="_blank" rel="noopener noreferrer">activities-web</a></td>
+    <td ><a href="https://github.com/orgs/pop-cloud/packages/container/package/helm-resources-api" target="_blank" rel="noopener noreferrer">activities-api</a></td>
+  </tr>
+</tbody>
+</table>
