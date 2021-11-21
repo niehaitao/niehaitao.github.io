@@ -11,7 +11,7 @@ An [application stack](https://www.techopedia.com/definition/6010/application-st
 
 ## Activities
 
-**Activities application stack** is composed of front/back/database to show the create/update/delete activities.
+**Activities** application stack is composed of front/back/database to show the create/update/delete activities.
 
 You can use `docker-compose -f activities/docker-compose.yml up` to create the stack then see the result on http://localhost:8082/.
 
@@ -44,3 +44,5 @@ You can use `docker-compose -f activities/docker-compose.yml up` to create the s
 > Lear more about [How to Build the Activities Stack](activities/README.md)
 
 ## Helm Resources
+
+**Helm Resources** application stack is composed of front/back/database to show the create/update/delete activities.

@@ -1,0 +1,20 @@
+version: "3.7"
+networks:
+  default:
+    external: true
+    name: act
+services:
+  api:
+    container_name: api
+    image: ghcr.io/pop-cloud/helm-resources-api:latest
+    ports:
+      - 8081:80
+    environment:
+      kube: /app/kubeconfig
+    volumes:
+      - .data/kube.config:/app/kubeconfig
+  web:
+    container_name: web
+    image: ghcr.io/pop-cloud/helm-resources-web:latest
+    ports:
+      - 8082:80

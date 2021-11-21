@@ -45,54 +45,76 @@ docker exec -it api /bin/sh
 
 ## Protocols
 
-### `/clusters`
-
 <details>
-
-```bash
-curl -X GET 'http://localhost:8081/clusters'
-```
-
-```json
-[{"name":"k3d-cluster-1","namespaces":["default","kube-system","kube-public","kube-node-lease"]}]
-```
-
-</details>
-
-
-
-### `/helm-releases/{cluster}/{namespace}`
-
-<details>
-
-```bash
-curl -X GET 'http://localhost:8081/helm-releases/k3d-cluster-1/kube-system'
-```
-
-```json
+<table>
+  <tbody>
+  <tr>
+    <td>Protocol</td>
+    <td>Example</td>
+    <td>Result</td>
+  </tr>
+  <tr>
+    <td>
+      <h3 id="clusters"><code>/clusters</code></h3>
+    </td>
+    <td>
+      <code class="language-bash">curl -X GET 'http://localhost:8081/clusters'</code>
+    </td>
+    <td>
+      <pre class="language-json">
 [
   {
-    "namespace": "kube-system", "name": "traefik-crd", "chart": "traefik-crd", "version": "9.18.2", "status": { "code": 1, "desc": "deployed" }, "resources": {}
-  },
-  {
-    "namespace": "kube-system", "name": "traefik", "chart": "traefik", "version": "9.18.2", "status": { "code": 1, "desc": "deployed" },
-        "resources": { "workloads": [{ "kind": "Deployment", "namespace": "kube-system", "name": "traefik" }] }
+    "name":"k3d-cluster-1",
+    "namespaces":[
+      "default",
+      "kube-system",
+      "kube-public",
+      "kube-node-lease"
+    ]
   }
-]
-
-```
-</details>
-
-
-### `/deploy-status/{cluster}/{namespace}/{name}`
-
-<details>
-
-```bash
-curl -X GET 'http://localhost:8081/deploy-status/k3d-cluster-1/kube-system/traefik'
-```
-
-```json
-{"code":1,"desc":"ready 1/1"}
-```
+]</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3 id="helm-releases"><code>/helm-releases/{cluster}/{namespace}</code></h3>
+    </td>
+    <td>
+      <code class="language-bash">curl -X GET 'http://localhost:8081/helm-releases/k3d-cluster-1/kube-system'</code>
+    </td>
+    <td>
+      <pre class="language-json">
+[
+  {
+    "namespace": "kube-system", 
+    "name": "traefik", 
+    "chart": "traefik", 
+    "version": "9.18.2", 
+    "status": { "code": 1, "desc": "deployed" },
+    "resources": { 
+      "workloads": [
+        { 
+          "kind": "Deployment", 
+          "namespace": "kube-system", 
+          "name": "traefik" 
+        }
+      ] 
+    }
+  }
+]</pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3 id="deploy-status"><code>/deploy-status/{cluster}/{namespace}/{name}</code></h3>
+    </td>
+    <td>
+      <code class="language-bash">curl -X GET 'http://localhost:8081/deploy-status/k3d-cluster-1/kube-system/traefik'</code>
+    </td>
+    <td>
+      <pre class="language-json">{"code":1,"desc":"ready 0/1"}</pre>
+    </td>
+  </tr>
+  </tbody>
+</table>
 </details>
