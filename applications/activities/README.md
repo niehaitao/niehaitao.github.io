@@ -1,10 +1,30 @@
 # Activities
 
-The stack is composed of [activities-web](https://github.com/niehaitao/activities-web), [activities-api](https://github.com/niehaitao/activities-api) and [activities-database](activities/init-db.sql)
+**Activities application stack** is composed of front/back/database to show the create/update/delete activities.
 
-|                 Application                  |                Architecture                |
-| :------------------------------------------: | :----------------------------------------: |
-| <img src=".data/activities.gif" width="300" /> | <img src="../.data/architecture.png" width="1000" /> |
+<table>
+<thead>
+  <tr>
+    <th colspan="4">Application Architecture </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3"><img src=".data/activities.gif" alt="app"  width="200"></td>
+    <td colspan="3"><img src="../.data/architecture.png" width="600"></td>
+  </tr>
+  <tr>
+    <td>Front End Web</td>
+    <td>Back End API</td>
+    <td>Database</td>
+  </tr>
+  <tr>
+    <td ><a href="https://github.com/niehaitao/activities-web" target="_blank" rel="noopener noreferrer">activities-web</a></td>
+    <td ><a href="https://github.com/niehaitao/activities-api" target="_blank" rel="noopener noreferrer">activities-api</a></td>
+    <td ><a href="activities/init-db.sql" target="_blank" rel="noopener noreferrer">activities-database</a></td>
+  </tr>
+</tbody>
+</table>
 
 ## TL;DR
 
@@ -16,7 +36,7 @@ git clone https://github.com/niehaitao/activities-api.git api
 docker-compose -f docker-compose.build.yml up --force-recreate --abort-on-container-exit --build
 ```
 
-## Build & Run
+## One by One
 
 To build and run the stack's applications one by one.
 
