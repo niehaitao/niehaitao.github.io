@@ -1,4 +1,4 @@
-# Activities Stack
+# Activities
 
 The stack is composed of [activities-web](https://github.com/niehaitao/activities-web), [activities-api](https://github.com/niehaitao/activities-api) and [activities-database](activities/init-db.sql)
 
