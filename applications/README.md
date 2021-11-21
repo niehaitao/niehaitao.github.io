@@ -23,8 +23,8 @@ You can use `docker-compose -f activities/docker-compose.yml up` to create the s
 </thead>
 <tbody>
   <tr>
-    <td  rowspan="3"><img src="activities/.data/activities.gif" alt="app"  width="200"></td>
-    <td  colspan="3"><img src=".data/architecture.png" width="600"></td>
+    <td rowspan="3"><img src="activities/.data/activities.gif" alt="app"  width="200"></td>
+    <td colspan="3"><img src=".data/architecture.png" width="600"></td>
   </tr>
   <tr>
     <td>Front End Web</td>
