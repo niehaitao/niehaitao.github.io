@@ -14,9 +14,9 @@ Various tools can be used to automate the cluster lifecycle management for platf
 
 ## DEV
 
-> [lil-app](https://github.com/niehaitao/lil-app) is a simple application following the [CI/CD](#cicd) approach of DevOps
+> [Activities application stack](https://github.com/niehaitao/niehaitao.github.io/tree/main/applications/activities) is composed of front/back/database to show the create/update/delete activities.
 
-See [LIL-APP](https://github.com/niehaitao/lil-app)
+See [Activities application stack](https://github.com/niehaitao/niehaitao.github.io/tree/main/applications/activities)
 
 ## CI/CD
 
