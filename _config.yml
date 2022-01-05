@@ -1,2 +1,7 @@
 remote_theme: mmistakes/so-simple-theme
 # pmarsceill/just-the-docs
+
+
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
