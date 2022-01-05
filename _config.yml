@@ -2,12 +2,30 @@ remote_theme: mmistakes/so-simple-theme
 # pmarsceill/just-the-docs
 
 
-title: "Simply-Re-Explained topics on DEV & OPS"
-description: "by Haitao NIE\nJava Software Engineer for a decade then SRE since 2020"
+title: "TL;DR for DEV and OPS"
+description: "Simply Re-Explained by Haitao NIE"
 url: "https://niehaitao.github.io"
 
 read_time: true
 words_per_minute: 200
 
+defaults:
+  # Post defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
+  # Recipe defaults
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      layout: post
+      comments: true
+      share: true
+      
 category_archive_path: "/categories/#"
 tag_archive_path: "/tags/#"
