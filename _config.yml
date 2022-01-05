@@ -8,7 +8,13 @@ url: "https://niehaitao.github.io"
 
 read_time: true
 words_per_minute: 200
-    
+
+# Collections
+collections:
+  ops:
+    output: true
+    permalink: /:collection/:path/
+
 defaults:
   # Post defaults
   - scope:
