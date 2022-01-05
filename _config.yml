@@ -12,12 +12,18 @@ words_per_minute: 200
 defaults:
   # Post defaults
   - scope:
-      path: "_posts"
+      path: "dev"
       type: posts
     values:
       layout: post
       comments: true
       share: true
-      
+  - scope:
+      path: "ops"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
 category_archive_path: "/categories/#"
 tag_archive_path: "/tags/#"
