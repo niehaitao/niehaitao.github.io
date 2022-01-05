@@ -1,25 +1,6 @@
 ---
-layout: default
-title: Home
-nav_order: 1
-has_children: false
+layout: home
+limit: 10
+show_excerpts: true
+entries_layout: list
 ---
-
-# Simply-Re-Explained DEV and OPS
-
-> Who am I
-
-*I've been Java Software Engineer for a decade then SRE since 2020.*
-
-> What's the problem
-
-*I find it hard to learn topics on DEV and OPS and often get lost.*
-
-> What's the solution
-
-*Let's try to **simply re-explain** theses topics*
-
-## Links
-
-- [GitHub Page](https://niehaitao.github.io/)
-- [GitHub Repo](https://github.com/niehaitao/niehaitao.github.io)
