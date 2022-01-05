@@ -6,31 +6,19 @@
 
 > What's the problem
 
-*I find it hard to get started on a topic and often get lost in the world of SRE.*
+*I find it hard to learn topics on DEV and OPS and often get lost.*
 
 > What's the solution
 
-*Let's try to **simply re-explain** things like this:*
+*Let's try to **simply re-explain** theses topics*
 
-1. We start with each functional topic with an overview, the architecture comprising a bunch of components/tools.
+## DEV
 
-   *See the [Monitoring Overview](sre-simply-re-explained/monitoring/README.md) for example*
+Getting started with [DEV](dev/README.md)
 
-2. Then we spotlight each component/tool on
+## OPS
 
-   - how to install it
-   - how to configure it for working with other components/tools of the stack
-   - how to test it
-
-    *See [Prometheus-Grafana-Loki Stacks](sre-simply-re-explained/tools/prometheus-grafana-loki/README.md) for example*
-
-## DEV-OPS
-
-Getting started with [DEV-OPS](sre-simply-re-explained/README.md)
-
-## OPS-DEV
-
-Getting started with [OPS-DEV](applications/README.md)
+Getting started with [OPS](ops/README.md)
 
 ## Links
 
