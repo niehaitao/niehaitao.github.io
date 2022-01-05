@@ -2,6 +2,13 @@ remote_theme: mmistakes/so-simple-theme
 # pmarsceill/just-the-docs
 
 
-# Taxonomy pages
+title: "Simply-Re-Explained topics on DEV and OPS by Haitao NIE"
+description: "Java Software Engineer for a decade then SRE since 2020"
+url: "https://niehaitao.github.io"
+skin: "/assets/css/skins/light.css"
+
+read_time: true
+words_per_minute: 200
+
 category_archive_path: "/categories/#"
 tag_archive_path: "/tags/#"
