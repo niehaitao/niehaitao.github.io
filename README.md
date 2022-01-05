@@ -14,11 +14,11 @@
 
 ## DEV
 
-Getting started with [DEV](dev/README.md)
+Getting started with [DEV](docs/dev/README.md)
 
 ## OPS
 
-Getting started with [OPS](ops/README.md)
+Getting started with [OPS](docs/ops/README.md)
 
 ## Links
 
