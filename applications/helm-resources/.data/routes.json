@@ -1,5 +1,0 @@
-{
-    "/helm-releases/k3d-cluster-1/kube-system": "/helm-releases_kube-system",
-    "/helm-releases/k3d-cluster-2/kube-system": "/helm-releases_kube-system",
-    "/helm-releases/*/*": "/helm-releases_empty"
-  }
