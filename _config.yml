@@ -12,7 +12,7 @@ words_per_minute: 200
 defaults:
   # Post defaults
   - scope:
-      path: "dev"
+      path: "_posts"
       type: posts
     values:
       layout: post
