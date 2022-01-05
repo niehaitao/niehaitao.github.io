@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Child
+title: OPS Child
 parent: OPS
 nav_order: 1
 has_children: false
 ---
 
-# OPS Child
+# Child
