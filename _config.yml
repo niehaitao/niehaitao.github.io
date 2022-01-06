@@ -51,7 +51,7 @@ defaults:
       read_time: true
       comments: true
       share: false
-      related: true
+      related: false # YOU MAY ALSO ENJOY
   # _pages
   - scope:
       path: "_pages"
