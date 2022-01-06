@@ -22,8 +22,8 @@ header:
 </thead>
 <tbody>
   <tr>
-    <td rowspan="3"><img src="/assets/data/activities.gif"    width="350"></td>
-    <td colspan="3"><img src="/assets/data/architecture.png"  width="600"></td>
+    <td rowspan="3"><img src="/assets/activities/activities.gif"    width="350"></td>
+    <td colspan="3"><img src="/assets/activities/architecture.png"  width="600"></td>
   </tr>
   <tr>
     <td>Front End Web</td>
