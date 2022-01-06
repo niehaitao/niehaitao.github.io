@@ -1,7 +1,7 @@
 ---
-title: "Edge Case: Nested and Mixed Lists"
 categories:
   - OPS
+title: "Edge Case: Nested and Mixed Lists"
 tags:
   - content
   - css
