@@ -1,4 +1,7 @@
 # Site navigation links
+
+- title: Home
+  url: /
 - title: DEV
   url: /categories/dev/
 - title: OPS
