@@ -4,11 +4,11 @@ categories:
   - OPS
 tags:
   - toc
+author_profile: false
+classes: wide
 toc: true
 toc_sticky: true
-author_profile: false
-layout: single
-classes: wide
+breadcrumbs: true
 ---
 
 # Sticky TOC
