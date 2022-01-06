@@ -7,7 +7,6 @@ tags:
   - Post Formats
   - readability
   - standard
-layout: splash
 ---
 
 # Modified Date
