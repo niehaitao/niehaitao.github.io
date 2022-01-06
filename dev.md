@@ -1,7 +1,7 @@
 ---
 title: DEV
 layout: category
-permalink: /categories/dev/
+permalink: /dev/
 taxonomy: DEV
 ---
 
