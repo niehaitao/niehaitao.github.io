@@ -10,12 +10,12 @@ header:
 ---
 
 
-**Activities application stack** is composed of front/back/database to show the create/update/delete activities.
+**Activities** is an **application stack**, composed of front-back-database to show the activities of create-update-delete.
 
 <table>
 <thead>
   <tr>
-    <th colspan="4">Application Architecture </th>
+    <th colspan="4">Architecture </th>
   </tr>
 </thead>
 <tbody>
