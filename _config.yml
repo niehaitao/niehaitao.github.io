@@ -27,7 +27,7 @@ tag_archive_path: "/tags/#"
 defaults:
   # Post defaults
   - scope:
-      path: "_posts"
+      path: "_posts/dev"
       type: posts
     values:
       layout: post
