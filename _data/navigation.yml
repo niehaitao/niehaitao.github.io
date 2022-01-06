@@ -2,10 +2,10 @@ main:
   - title: "Home"
     url: /
   - title: "DEV"
-    url: /categories/dev
+    url: /dev
   - title: "OPS"
-    url: /categories/ops
+    url: /ops
   - title: "Tags"
     url: /tags/
   - title: "Archives"
-    url: /posts/
+    url: /archives/

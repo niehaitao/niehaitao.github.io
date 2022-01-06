@@ -1,7 +1,7 @@
 ---
-title: "OPS"
+title: "OPS Topics"
 layout: category
 taxonomy: OPS
-permalink: /categories/ops
+permalink: /ops
 author_profile: true
 ---

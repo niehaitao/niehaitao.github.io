@@ -1,7 +1,7 @@
 ---
-title: "DEV"
+title: "DEV Topics"
 layout: category
 taxonomy: DEV
-permalink: /categories/dev
+permalink: /dev
 author_profile: true
 ---
