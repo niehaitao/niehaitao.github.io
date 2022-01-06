@@ -1,9 +1,8 @@
 ---
 title: DEV
-layout: collection
-permalink: /dev/
-collection: dev
-entries_layout: grid
+layout: category
+permalink: /categories/dev/
+taxonomy: DEV
 ---
 
-Sample document listing for the collection `_dev`.
+Sample post listing for the category `DEV`.

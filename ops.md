@@ -1,9 +1,8 @@
 ---
 title: OPS
-layout: collection
-permalink: /ops/
-collection: ops
-entries_layout: grid
+layout: category
+permalink: /categories/dev/
+taxonomy: OPS
 ---
 
-Sample document listing for the collection `_dev`.
+Sample post listing for the category `OPS`.

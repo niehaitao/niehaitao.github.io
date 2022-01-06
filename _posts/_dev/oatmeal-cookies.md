@@ -4,8 +4,8 @@ image:
   path: /images/oatmeal-cookies-lg.jpg
   thumbnail: /images/oatmeal-cookies-400x200.jpg
   caption: "Photo from [Pexels](https://www.pexels.com)"
-tags:
-  - opsdev
+categories:
+  - DEV
 ---
 
 Oatmeal cookies are a proverbial favorite with both kids and adults. This crisp and chewy cookie is loaded with oats, dried fruit, and chopped nuts.
