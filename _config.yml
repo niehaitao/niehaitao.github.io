@@ -52,6 +52,7 @@ defaults:
       comments: true
       share: false
       related: false # YOU MAY ALSO ENJOY
+
   # _pages
   - scope:
       path: "_pages"
@@ -68,4 +69,6 @@ tag_archive:
   path: /tags/
 
 atom_feed:
+  hide: true
+footer:
   hide: true
