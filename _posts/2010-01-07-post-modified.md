@@ -7,7 +7,6 @@ tags:
   - Post Formats
   - readability
   - standard
-author_profile: false
 classes: wide
 ---
 
