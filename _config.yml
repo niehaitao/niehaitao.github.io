@@ -5,7 +5,8 @@ url                      : https://niehaitao.github.io # the base hostname & pro
 title: "TL;DR for DEV and OPS"
 email: nie.haitao@gmail.com
 github_username: nie.haitao
-# search: true
+search: true
+search_full_content: true
 
 # Build settings
 markdown: kramdown
@@ -46,8 +47,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
+      layout: splash
       read_time: true
       comments: true
       share: false
