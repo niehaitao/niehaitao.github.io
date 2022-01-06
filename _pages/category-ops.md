@@ -1,6 +1,6 @@
 ---
 title: "OPS"
-layout: categories
+layout: category
 taxonomy: OPS
 permalink: /categories/ops
 author_profile: true

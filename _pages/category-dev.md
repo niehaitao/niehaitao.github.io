@@ -1,6 +1,6 @@
 ---
 title: "DEV"
-layout: categories
+layout: category
 taxonomy: DEV
 permalink: /categories/dev
 author_profile: true
