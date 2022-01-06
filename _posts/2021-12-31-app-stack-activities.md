@@ -40,14 +40,16 @@ header:
 
 ## TL;DR
 
-To build and run the whole stack together with 
-- [docker-compose.yml](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/docker-compose.yml)
-- [init-db.sql](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/init-db.sql)
-
-```bash
-docker-compose -f docker-compose.yml up --force-recreate --abort-on-container-exit --build
-```
-
+- Option 1: build and run the whole stack together with 
+  - [docker-compose.yml](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/docker-compose.yml)
+  - [init-db.sql](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/init-db.sql)
+  ```bash
+  docker-compose -f docker-compose.yml up --force-recreate --abort-on-container-exit --build
+  ```
+- Option 2: deploy with the whole stack together with the [activities helm chart](https://github.com/pop-cloud/pop-cloud.github.io/tree/main/helm-charts)
+  ```bash
+  helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.github.io/helm-charts
+  ```
 ## One by One
 
 To build and run the stack's applications one by one.
