@@ -4,8 +4,10 @@ categories:
   - OPS
 tags:
   - toc
+author_profile: true
 toc: true
 toc_sticky: true
+breadcrumbs: true
 ---
 
 # Sticky TOC
