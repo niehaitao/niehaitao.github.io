@@ -4,7 +4,9 @@ date: 2021-12-31
 categories:
   - DEV
 tags:
-  - opsdev
+  - dev
+  - docker
+  - helm
 header:
   overlay_color: "#333"
 ---
@@ -38,7 +40,9 @@ header:
 
 ## TL;DR
 
-To build and run the whole stack together.
+To build and run the whole stack together with 
+- [docker-compose.yml](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/docker-compose.yml)
+- [init-db.sql](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/init-db.sql)
 
 ```bash
 docker-compose -f docker-compose.yml up --force-recreate --abort-on-container-exit --build
