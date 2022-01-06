@@ -2,6 +2,9 @@ remote_theme: mmistakes/so-simple-theme
 
 url: "https://niehaitao.github.io"
 
+title: "TL;DR for DEV and OPS"
+description: "Simply Re-Explained by Haitao NIE"
+
 read_time: true
 words_per_minute: # 200
 
@@ -17,7 +20,6 @@ paginate_path: /page:num/
 search_full_content: false
 
 # Taxonomy pages
-category_archive_path: "/categories/#"
 tag_archive_path: "/tags/#"
 
 # Collections
