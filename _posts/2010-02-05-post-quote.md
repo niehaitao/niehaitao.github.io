@@ -1,7 +1,7 @@
 ---
 title: "Post: Quote"
 categories:
-  - Blog
+  - OPS
 tags:
   - Post Formats
   - quote

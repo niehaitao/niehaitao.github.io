@@ -4,13 +4,8 @@ url                      : https://niehaitao.github.io # the base hostname & pro
 
 title: "TL;DR for DEV and OPS"
 email: nie.haitao@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
 github_username: nie.haitao
-
-search: true
+# search: true
 
 # Build settings
 markdown: kramdown
