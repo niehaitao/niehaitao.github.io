@@ -1,5 +1,5 @@
 ---
-title: "Activities Application Stack"
+title: "Application Stack - Activities"
 date: 2021-12-31
 categories:
   - DEV
