@@ -11,11 +11,6 @@ words_per_minute: # 200
 # Build settings
 permalink: /:categories/:title/
 
-
-# Pagination - https://jekyllrb.com/docs/pagination/
-paginate: 10
-paginate_path: /page:num/
-
 # Search
 search_full_content: false
 
