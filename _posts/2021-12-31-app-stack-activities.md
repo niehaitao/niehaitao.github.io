@@ -50,6 +50,7 @@ header:
   ```bash
   helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.github.io/helm-charts
   ```
+
 ## One by One
 
 To build and run the stack's applications one by one.
