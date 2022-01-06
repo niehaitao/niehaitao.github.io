@@ -1,5 +1,5 @@
 ---
-title: "Application Stack: Activities"
+title: "Activities Application Stack"
 date: 2021-12-31
 categories:
   - DEV
@@ -20,7 +20,7 @@ header:
 </thead>
 <tbody>
   <tr>
-    <td rowspan="3"><img src="/assets/data/activities.gif"    width="400"></td>
+    <td rowspan="3"><img src="/assets/data/activities.gif"    width="350"></td>
     <td colspan="3"><img src="/assets/data/architecture.png"  width="600"></td>
   </tr>
   <tr>
