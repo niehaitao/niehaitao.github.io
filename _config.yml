@@ -22,7 +22,7 @@ tag_archive_path: "/tags/#"
 
 # Collections
 collections:
-  recipes:
+  dev:
     output: true
     permalink: /:collection/:path/
 
@@ -38,8 +38,8 @@ defaults:
       share: true
   # Recipe defaults
   - scope:
-      path: "_recipes"
-      type: recipes
+      path: "_dev"
+      type: dev
     values:
       layout: post
       comments: true

@@ -1,9 +1,9 @@
 ---
-title: Recipes
+title: DEV
 layout: collection
-permalink: /recipes/
-collection: recipes
+permalink: /dev/
+collection: dev
 entries_layout: grid
 ---
 
-Sample document listing for the collection `_recipes`.
+Sample document listing for the collection `_dev`.
