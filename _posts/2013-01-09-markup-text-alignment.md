@@ -1,7 +1,7 @@
 ---
 title: "Markup: Text Alignment and Transformations"
 categories:
-  - Markup
+  - DEV
 tags:
   - alignment
   - content
