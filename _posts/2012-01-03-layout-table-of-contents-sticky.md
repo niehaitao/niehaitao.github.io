@@ -4,6 +4,7 @@ categories:
   - OPS
 tags:
   - toc
+layout: splash
 toc: true
 toc_sticky: true
 ---

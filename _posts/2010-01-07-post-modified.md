@@ -7,7 +7,7 @@ tags:
   - Post Formats
   - readability
   - standard
-classes: wide
+layout: splash
 ---
 
 # Modified Date
