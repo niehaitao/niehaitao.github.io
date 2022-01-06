@@ -1,6 +1,6 @@
 ---
 title: DEV
-layout: category
+layout: posts
 permalink: /dev/
 taxonomy: DEV
 ---

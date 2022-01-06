@@ -1,6 +1,6 @@
 ---
 title: OPS
-layout: category
+layout: posts
 permalink: /ops/
 taxonomy: OPS
 ---
