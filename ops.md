@@ -1,7 +1,7 @@
 ---
 title: OPS
 layout: category
-permalink: /categories/dev/
+permalink: /categories/ops/
 taxonomy: OPS
 ---
 
