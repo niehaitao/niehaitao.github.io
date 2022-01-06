@@ -6,7 +6,7 @@ tags:
   - toc
 toc: true
 toc_sticky: true
-classes: wide
+author_profile: false
 ---
 
 # Sticky TOC
