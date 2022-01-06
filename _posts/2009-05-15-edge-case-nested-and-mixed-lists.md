@@ -1,9 +1,9 @@
 ---
 title: "Edge Case: Nested and Mixed Lists"
 categories:
-  - dev
+  - Edge Case
 tags:
-  - todo
+  - content
   - css
   - edge case
   - lists
