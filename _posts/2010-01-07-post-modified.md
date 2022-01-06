@@ -7,6 +7,7 @@ tags:
   - Post Formats
   - readability
   - standard
+classes: wide
 ---
 
 This post has been updated and should show a modified date if used in a layout.
