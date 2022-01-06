@@ -4,7 +4,7 @@ date: 2021-12-31
 categories:
   - DEV
 tags:
-  - dev
+  - application stack
   - docker
   - helm
 header:
