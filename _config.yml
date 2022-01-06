@@ -1,103 +1,35 @@
-remote_theme             : "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-url                      : https://niehaitao.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+remote_theme: mmistakes/so-simple-theme
 
-title: MM
-email:
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+url: "https://niehaitao.github.io"
 
-search: true
+title: "TL;DR for DEV and OPS"
+description: "Simply Re-Explained by Haitao NIE"
+
+read_time: true
+words_per_minute: # 200
 
 # Build settings
-markdown: kramdown
-# Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
+
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+paginate: 10
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-include:
-  - _pages
+# Search
+search_full_content: false
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
 
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
-author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
-
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
-
+# Front Matter Defaults
 defaults:
-  # _posts
+  # Post defaults
   - scope:
-      path: ""
+      path: "_posts"
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
+      layout: post
       comments: true
       share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
