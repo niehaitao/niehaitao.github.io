@@ -25,7 +25,9 @@ collections:
   dev:
     output: true
     permalink: /:collection/:path/
-
+  ops:
+    output: true
+    permalink: /:collection/:path/
 # Front Matter Defaults
 defaults:
   # Post defaults
@@ -36,10 +38,16 @@ defaults:
       layout: post
       comments: true
       share: true
-  # Recipe defaults
   - scope:
       path: "_dev"
       type: dev
+    values:
+      layout: post
+      comments: true
+      share: true
+  - scope:
+      path: "_ops"
+      type: ops
     values:
       layout: post
       comments: true
