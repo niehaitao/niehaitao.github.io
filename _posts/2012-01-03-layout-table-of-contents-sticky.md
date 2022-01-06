@@ -5,8 +5,6 @@ categories:
 tags:
   - toc
 layout: splash
-toc: true
-toc_sticky: true
 ---
 
 # Sticky TOC
