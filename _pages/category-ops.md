@@ -1,7 +1,7 @@
 ---
-title: "DEV"
+title: "OPS"
 layout: categories
-permalink: /categories/
+taxonomy: OPS
+permalink: /categories/ops
 author_profile: true
-taxonomy: DEV
 ---
