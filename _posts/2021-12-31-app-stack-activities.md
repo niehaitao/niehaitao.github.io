@@ -39,7 +39,7 @@ header:
 
 ## TL;DR
 
-To spin-up your stack on http://localhost:8082/
+To spin-up your stack on _[http://localhost:8082/](http://localhost:8082/)_
 
 
 <div class="notice--primary" markdown="1">
