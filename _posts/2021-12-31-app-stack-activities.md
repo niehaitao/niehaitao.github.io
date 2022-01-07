@@ -39,8 +39,8 @@ header:
 
 ## TL;DR
 
-<div class="notice" markdown="1">
-**To spin-up your stack on http://localhost:8082/**
+To spin-up your stack on http://localhost:8082/
+
 
 <div class="notice--primary" markdown="1">
 **Option 1: run the stack on Docker**
@@ -68,14 +68,14 @@ helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.gi
 
 </div>
 
-</div>
+
 
 ## Build Up
 
-<div class="notice" markdown="1">
-**To build the stack's applications one by one.**
+To build the stack's applications one by one.
 
 <div class="notice--primary" markdown="1">
+
 **Application 1: Database PostgreSQL**
 <details>
   <script src="https://gist.github.com/niehaitao/bca401f91b3d1169b71096f1bc4510cc.js"></script>
@@ -94,6 +94,4 @@ helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.gi
 <details>
   <script src="https://gist.github.com/niehaitao/e2bcd90eaa74231312324b7213533f26.js"></script>
 </details>
-</div>
-
 </div>
