@@ -11,18 +11,15 @@ header:
   overlay_color: "#333"
 ---
 
-**Activities** is an **application stack**, composed of front-back-database to show the activities of create-update-delete.
+**Activities** is an ***application stack*** composed of front-back-database to show the create-update-delete activities.
+
+*[application stack]: a suite or set of applications that work together to achieve a common goal
 
 <table>
-<thead>
-  <tr>
-    <th colspan="4">Architecture </th>
-  </tr>
-</thead>
 <tbody>
   <tr>
-    <td rowspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/activities.gif"    width="350"></td>
-    <td colspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/architecture.png"  width="600"></td>
+    <td colspan="1" rowspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/activities.gif"    width="400"></td>
+    <td colspan="3" rowspan="1"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/architecture.png"  width="800"></td>
   </tr>
   <tr>
     <td>Front End Web</td>
@@ -30,9 +27,9 @@ header:
     <td>Database</td>
   </tr>
   <tr>
-    <td ><a href="https://github.com/niehaitao/activities-web" target="_blank" rel="noopener noreferrer">activities-web</a></td>
-    <td ><a href="https://github.com/niehaitao/activities-api" target="_blank" rel="noopener noreferrer">activities-api</a></td>
-    <td ><a href="activities/init-db.sql" target="_blank" rel="noopener noreferrer">activities-database</a></td>
+    <td><a href="https://github.com/niehaitao/activities-web">activities-web</a></td>
+    <td><a href="https://github.com/niehaitao/activities-api">activities-api</a></td>
+    <td><a href="https://hub.docker.com/_/postgres"          >activities-db</a></td>
   </tr>
 </tbody>
 </table>
