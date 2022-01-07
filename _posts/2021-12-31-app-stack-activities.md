@@ -19,7 +19,7 @@ header:
 <tbody>
   <tr>
     <td colspan="1" rowspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/activities.gif"    width="400"></td>
-    <td colspan="3" rowspan="1"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/architecture.png"  width="800"></td>
+    <td colspan="3" rowspan="1"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/architecture.png"  width="600"></td>
   </tr>
   <tr>
     <td>Front End Web</td>
