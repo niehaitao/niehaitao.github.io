@@ -11,7 +11,6 @@ header:
   overlay_color: "#333"
 ---
 
-
 **Activities** is an **application stack**, composed of front-back-database to show the activities of create-update-delete.
 
 <table>
@@ -22,8 +21,8 @@ header:
 </thead>
 <tbody>
   <tr>
-    <td rowspan="3"><img src="/assets/activities/activities.gif"    width="350"></td>
-    <td colspan="3"><img src="/assets/activities/architecture.png"  width="600"></td>
+    <td rowspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/activities.gif"    width="350"></td>
+    <td colspan="3"><img src="{{ site.url }}{{ site.baseurl }}/assets/activities/architecture.png"  width="600"></td>
   </tr>
   <tr>
     <td>Front End Web</td>
@@ -40,70 +39,61 @@ header:
 
 ## TL;DR
 
-- Option 1: build and run the whole stack together with
-  [docker-compose.yml](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/docker-compose.yml) and 
-  [init-db.sql](https://github.com/niehaitao/niehaitao.github.io/blob/main/assets/activities/init-db.sql)
-  ```bash
-  docker-compose -f docker-compose.yml up --force-recreate --abort-on-container-exit --build
-  ```
-- Option 2: deploy with the whole stack together with the [activities helm chart](https://github.com/pop-cloud/pop-cloud.github.io/tree/main/helm-charts)
-  ```bash
-  helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.github.io/helm-charts
-  ```
+<div class="notice" markdown="1">
+**To spin-up your stack on http://localhost:8082/**
 
-## One by One
-
-To build and run the stack's applications one by one.
-
-### Network
-
-Create the network
-```bash
-docker network create act
-```
-
-### Database
+<div class="notice--primary" markdown="1">
+**Option 1: run the stack on Docker**
 
 ```bash
-docker run --rm             \
-  --net   act               \
-  --name  act-db-postgres   \
-  -v ${PWD}/init-db.sql:/docker-entrypoint-initdb.d/init.sql \
-  -e POSTGRES_USER=foo      \
-  -e POSTGRES_PASSWORD=bar  \
-  -e POSTGRES_DB=demo       \
-  postgres
-
-docker run -it --rm  --net act  \
-  jbergknoff/postgresql-client  \
-  postgresql://foo:bar@act-db-postgres:5432/demo
-\l
-\dt
-select * from activities;
+docker-compose -f act.docker-compose.yml up --force-recreate --abort-on-container-exit --build
 ```
 
-### API - Back End
+<details><summary>Inputs</summary>
+  <script src="https://gist.github.com/niehaitao/7e6937c01abce64c41a1c5b7dd299983.js"></script>
+</details>
+
+</div>
+
+<div class="notice--primary" markdown="1">
+**Option 2: run the stack on K8S**
 
 ```bash
-cd api
-
-docker build . -t act-api
-
-docker run -p 8081:8080 --name api --network act --rm act-api:latest -e 
-
+helm upgrade -i act activities-stack --version 1.0.0 --repo https://pop-cloud.github.io/helm-charts -f act.helm-chart.values.yaml
 ```
 
-### Web - Front End
+<details><summary>Inputs</summary>
+  <script src="https://gist.github.com/niehaitao/689e05e308d3fbb49e5174b748b38612.js"></script>
+</details>
 
-```bash
-cd web
+</div>
 
-docker build . \
-  -f ops/docker/app.dockerfile \
-  --build-arg ENV='test' \
-  --build-arg BUILD="$(date "+%F %H:%M:%S")" \
-  --build-arg GIT_HASH="$(git rev-parse --short HEAD)" \
-  -t act-web
+</div>
 
-docker run -p 8082:80   --name web --network act --rm act-web:latest
-```
+## Build Up
+
+<div class="notice" markdown="1">
+**To build the stack's applications one by one.**
+
+<div class="notice--primary" markdown="1">
+**Application 1: Database PostgreSQL**
+<details>
+  <script src="https://gist.github.com/niehaitao/bca401f91b3d1169b71096f1bc4510cc.js"></script>
+</details>
+</div>
+
+<div class="notice--primary" markdown="1">
+**Application 2: Backend API**
+<details>
+  <script src="https://gist.github.com/niehaitao/170d72027606c3a906bf63eec8055c50.js"></script>
+</details>
+</div>
+
+<div class="notice--primary" markdown="1">
+**Application 3: Frontend Web**
+<details>
+  <script src="https://gist.github.com/niehaitao/e2bcd90eaa74231312324b7213533f26.js"></script>
+</details>
+</div>
+
+</div>
