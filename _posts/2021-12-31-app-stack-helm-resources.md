@@ -11,7 +11,7 @@ header:
   overlay_color: "#333"
 ---
 
-**Helm Resources** is an ***application stack*** for the *cross-cluster monitoring* on the releases of *helm charts*.
+**Helm Resources** is an *application stack* for the *cross-cluster monitoring* on the releases of *helm charts*.
 
 It observes not only the status of *helm release* itself but also its *helm resources*.
 

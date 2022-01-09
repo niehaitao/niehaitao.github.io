@@ -11,7 +11,7 @@ header:
   overlay_color: "#333"
 ---
 
-**Activities** is an ***application stack*** composed of front-back-database to show the create-update-delete activities.
+**Activities** is an *application stack* composed of *front-back-database* to show the create-update-delete activities.
 
 *[application stack]: a suite or set of applications that work together to achieve a common goal
 
