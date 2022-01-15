@@ -5,8 +5,8 @@ categories:
   - DEV
 tags:
   - application stack
-  - docker
-  - helm
+  - kubernetes
+  - monitoring
 header:
   overlay_color: "#333"
 ---

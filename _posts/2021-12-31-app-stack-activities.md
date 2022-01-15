@@ -5,8 +5,8 @@ categories:
   - DEV
 tags:
   - application stack
-  - docker
-  - helm
+  - golang
+  - react
 header:
   overlay_color: "#333"
 ---
