@@ -31,7 +31,7 @@ plugins:
 
 author:
   name   : "Haitao NIE"
-  avatar : "/assets/images/about-me.png"
+  avatar : "/assets/images/bio-photo.png"
   bio    : "Java Software Engineer for a decade then SRE since 2020"
   links:
     - label: "Website"
