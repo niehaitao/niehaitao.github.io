@@ -7,11 +7,20 @@ or
 http://127.0.0.1:4000/niehaitao/ by building locally as
 
 ```bash
-cd my-site
-bundle update
-bundle install
-bundle exec jekyll build --config _config.yml,_config.dev.yml
-bundle exec jekyll serve --config _config.yml,_config.dev.yml --port 4444 
+
+docker run -d --name jekyll-site \                                                                                                                                             ─╯
+  -v "$PWD:/site" \
+  -p 4000:4000 \
+  jekyll/jekyll:3.8 tail -f /dev/null
+
+docker exec -it jekyll-site sh
+cd /site
+jekyll serve --config _config.yml,_config.dev.yml
+
+# bundle update
+# bundle install
+# bundle exec jekyll build --config _config.yml,_config.dev.yml
+# bundle exec jekyll serve --config _config.yml,_config.dev.yml --port 4444 
 ```
 
 ## References
